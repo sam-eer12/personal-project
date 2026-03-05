@@ -25,7 +25,7 @@ export default function CarScrollAnimation() {
 
   useGSAP(
     () => {
-      // Return early if elements are not firmly in DOM
+      
       if (!carRef.current || !trailRef.current || !valueAddRef.current || !sectionRef.current || !trackRef.current) return;
 
       const car = carRef.current;
@@ -36,9 +36,8 @@ export default function CarScrollAnimation() {
       const valueRect = valueAdd.getBoundingClientRect();
       const letterOffsets = letters.map((letter) => letter.offsetLeft);
 
-      // Constants from original html
       const roadWidth = window.innerWidth;
-      const carWidth = 150; // Approximated car width matching the hardcoded GSAP logic
+      const carWidth = 150; 
       const endX = roadWidth - carWidth;
 
       gsap.to(car, {
@@ -65,7 +64,7 @@ export default function CarScrollAnimation() {
         },
       });
 
-      // Animate Info Boxes
+      
       const boxes = [
         { ref: box1Ref.current, start: "top+=400" },
         { ref: box2Ref.current, start: "top+=600" },
@@ -100,7 +99,7 @@ export default function CarScrollAnimation() {
       <div className="section z-10" ref={sectionRef}>
         <div className="track" ref={trackRef}>
           <div className="road" id="road">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+            
             <img
               src="https://paraschaturvedi.github.io/car-scroll-animation/McLaren%20720S%202022%20top%20view.png"
               alt="car"
